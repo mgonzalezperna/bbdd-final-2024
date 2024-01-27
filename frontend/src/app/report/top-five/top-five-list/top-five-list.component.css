@@ -1,0 +1,10 @@
+.titulo {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+:host ::ng-deep .mat-sort-header-container {
+    justify-content: left;
+}

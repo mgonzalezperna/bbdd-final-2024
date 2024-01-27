@@ -1,0 +1,40 @@
+.title {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.button-report {
+    background-color: #4285F4;
+    margin-left: 8px;
+}
+
+.white-char {
+    color: white;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.card-report {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.container {
+    max-width: 100rem;
+}
+
+.date {
+    margin-right: 2rem;
+}
+
+.red {
+    background-color: #ff4444;
+}

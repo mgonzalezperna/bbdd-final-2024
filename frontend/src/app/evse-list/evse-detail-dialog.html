@@ -1,0 +1,34 @@
+<h1 mat-dialog-title style="text-align: center;"><strong>{{title}} EVSE</strong></h1>
+<div mat-dialog-content>
+  <form class="example-form">
+    <mat-form-field class="lower-margin full-width"> Model
+      <input matInput placeholder="Model" [formControl]='modelValidator' [(ngModel)]="EVSE.model">
+      <mat-error *ngIf="modelValidator">{{errorMsgModel}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" style="margin-bottom:0.5rem"> Brand
+      <textarea placeholder="Brand" rows=4 [formControl]='brandValidator' matInput
+        [(ngModel)]="EVSE.brand"></textarea>
+      <mat-error *ngIf="brandValidator">{{errorMsgBrand}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" style="margin-bottom:0.5rem"> Location
+      <textarea placeholder="Location" rows=4 [formControl]='locationValidator' matInput
+        [(ngModel)]="EVSE.location"></textarea>
+      <mat-error *ngIf="locationValidator">{{errorMsgLocation}}</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div align="center" mat-dialog-actions>
+  <button class="mat-button red white-chars" mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button class="mat-button green white-chars" mat-raised-button (click)="accept()" [disabled]="cantSubmit()"
+    cdkFocusInitial>{{submitButtonText}}</button>
+</div>
+
+<div *ngIf="loading ||server_error" style="margin-top: 3rem;">
+  <div style="margin:auto;" *ngIf="loading" class="spinner-border text-primary d-flex justify-content-center"
+    role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div style="text-align: center;" class="card">
+    <mat-error>{{server_error}}</mat-error>
+  </div>
+</div>

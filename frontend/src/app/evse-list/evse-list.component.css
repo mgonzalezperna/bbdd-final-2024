@@ -1,0 +1,63 @@
+.title {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+section {
+    display: table;
+  }
+
+.create-container {
+    margin-bottom: 1rem;
+    margin-right: 8px;
+}
+
+.create {
+    background-color: #0d47a1;
+}
+
+.but-container {
+    margin-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    font-size: 14px;
+    display: table-cell;
+    max-width: 600px;
+}
+
+.but-container .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+}
+
+.green {
+    background-color: #00C851;
+}
+
+.red {
+    background-color: #ff4444;
+}
+
+.white-chars {
+    color: white;
+}
+
+.right {
+    text-align: right;
+}
+
+.lower-margin {
+    margin-bottom: 1rem;
+}
+
+.container {
+    margin-bottom: 2rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+:host ::ng-deep .mat-sort-header-container {
+    margin-left: 1.4rem;
+    justify-content: center;
+}

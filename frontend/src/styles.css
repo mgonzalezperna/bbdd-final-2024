@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.aling-right-buttons-in-toolbar {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+html, body {
+    background-color: #f1f1f1;
+}
+
+.green-icon {
+    color: green;
+}
+
+.red-icon {
+    color: red;
+}
+
+table {
+    width: 100%;
+}
+
+h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.loading {
+    text-align: center !important;
+    margin-top: 4rem !important;
+    margin-bottom: 4rem !important;
+}

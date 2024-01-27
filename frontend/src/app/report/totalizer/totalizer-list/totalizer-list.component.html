@@ -1,0 +1,34 @@
+<div class="container">
+  <h2 class="title">Totalizer Invoices</h2>
+
+  <table style="text-align: center;" mat-table (matSortChange)="sortData($event)" [dataSource]="report_invoices"
+    matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="EVSE_model">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> EVSE model</th>
+      <td mat-cell *matCellDef="let report_invoices"> {{report_invoices.EVSE_model}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="avg_score">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Average Score </th>
+      <td mat-cell *matCellDef="let report_invoices"> {{report_invoices.avg_score}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="max_power_transfered">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Max Powered Transfered (Kw) </th>
+      <td mat-cell *matCellDef="let report_invoices"> {{report_invoices.max_power_transfered}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="min_power_transfered">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Min Powered Transfered (Kw)</th>
+      <td mat-cell *matCellDef="let report_invoices"> {{report_invoices.min_power_transfered}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="total_invoices">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Invoices </th>
+      <td mat-cell *matCellDef="let report_invoices"> {{report_invoices.total_invoices}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayed_columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayed_columns;"></tr>
+  </table>

@@ -1,0 +1,29 @@
+<div class="container">
+  <h2 class="title">Top 5 experiences</h2>
+  <table style="text-align: center;" mat-table [dataSource]="top_five_experiences" matSort
+    (matSortChange)="sortData($event)" matSort class="mat-elevation-z8">
+
+    <ng-container matColumnDef="start_datetime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Start datetime</th>
+      <td mat-cell *matCellDef="let experiencia"> {{experiencia.start_datetime}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="duration_secs">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration (seconds)</th>
+      <td mat-cell *matCellDef="let experiencia"> {{experiencia.duration_secs}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="experience_score">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+      <td mat-cell *matCellDef="let experiencia"> {{experiencia.experience_score}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="comments">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Comments </th>
+      <td mat-cell *matCellDef="let experiencia"> {{experiencia.comments}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayed_columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayed_columns;"></tr>
+  </table>
+</div>

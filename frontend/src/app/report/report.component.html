@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 class="title">Reportes</h2>
+  <div class="align-left">
+    <button routerLink="/../home" mat-raised-button class="mat-button red white-char">Back</button>
+    <div *ngIf="mode=='top-5'; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <top-five-experiences></top-five-experiences>
+    </ng-template>
+    <ng-template #elseBlock>
+      <totalizer></totalizer>
+    </ng-template>
+    </div>
+  <router-outlet></router-outlet>
+</div>

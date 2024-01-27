@@ -1,0 +1,12 @@
+<button (click)="fetchTop5()" class="mat-button button-report white-char" mat-button cdkFocusInitial>
+  Query
+</button>
+<div class="loading">
+  <div style="margin:auto;" *ngIf="loading" class="spinner-border text-primary d-flex justify-content-center"
+    role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <mat-error *ngIf="server_error">{{server_error}}</mat-error>
+</div>
+<top-five-list *ngIf="top_five_experiences && !loading && !server_error" [top_five_experiences]="top_five_experiences">
+</top-five-list>
