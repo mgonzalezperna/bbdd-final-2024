@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["Martin Gonzalez Perna <mgonzalezperna@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+markupsafe = "^2.1.3"
+flask = "^3.0.0"
+sqlalchemy = "^2.0.25"
+flask-mysqldb = "^2.0.0"
+flask-cors = "^4.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+
+[tool.poetry.scripts]
+server = "backend.server:serve"
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
