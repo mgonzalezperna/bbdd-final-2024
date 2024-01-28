@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.11
 
 WORKDIR /usr/src/app
 
@@ -7,7 +7,7 @@ RUN pip install --upgrade pip poetry
 COPY ./backend ./backend
 COPY ./poetry.lock ./pyproject.toml ./
 
-RUN ["poetry", "config", "settings.virtualenvs.create", "false"]
+RUN ["poetry", "config", "virtualenvs.create", "false"]
 RUN ["poetry", "install"]
 
-EXPOSE 5000
+EXPOSE 9000

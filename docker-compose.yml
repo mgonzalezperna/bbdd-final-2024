@@ -1,0 +1,44 @@
+version: "3.8"
+services:
+### MySQL Container
+  mysql:
+    container_name: mysql
+    build:
+      context: backend/dockerfiles/.
+      args:
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+        - MYSQL_USER=${MYSQL_USER}
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+    volumes:
+      - ./volumes:/docker-entrypoint-initdb.d
+  backend:
+    container_name: backend
+    build:
+      context: backend/.
+    ports:
+      - "9000:9000"
+    networks:
+      - frontend
+      - backend
+    command: >
+      sh -c "poetry run serve"
+  frontend:
+    container_name: frontend
+    build:
+      context: frontend/.
+    ports:
+      - "4200:4200"
+    networks:
+      - frontend
+    command: >
+      sh -c "ng serve --host 0.0.0.0"
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
