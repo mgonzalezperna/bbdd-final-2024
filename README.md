@@ -25,9 +25,9 @@ After that, open a terminal and execute:
 
 ```
 ❯ docker exec -it mysql /bin/bash
-bash-4.4# mysql -uroot -p BBDD < docker-entrypoint-initdb.d/schema.sql
+bash-4.4# mysql -uroot -p BBDD < init_data/schema.sql
 Enter password: admin
-bash-4.4# mysql -uroot -p BBDD < docker-entrypoint-initdb.d/mocked_data.sql
+bash-4.4# mysql -uroot -p BBDD < init_data/mocked_data.sql
 Enter password: admin
 bash-4.4# exit
 ```

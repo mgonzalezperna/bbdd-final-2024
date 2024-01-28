@@ -9,5 +9,3 @@ COPY ./poetry.lock ./pyproject.toml ./
 
 RUN ["poetry", "config", "virtualenvs.create", "false"]
 RUN ["poetry", "install"]
-
-EXPOSE 9000
