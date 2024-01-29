@@ -15,7 +15,7 @@ services:
     networks:
       - backend
     volumes:
-      - ./volumes:/docker-entrypoint-initdb.d
+      - ./volumes:/init_data
   backend:
     container_name: backend
     build:
