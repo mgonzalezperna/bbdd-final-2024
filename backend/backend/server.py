@@ -69,16 +69,13 @@ def EVSE_create():
 ''' Updates an EVSE. '''
 @app.route("/api/EVSEs/<int:id>/update", methods=['POST'])
 def EVSE_update(id):
-    app.logger.info("json_request:%s", request.json)
     try:
         _dict_data = request.json
         _location = _dict_data['location']
         _brand = _dict_data['brand']
         _model = _dict_data['model']
-        app.logger.info(_location, _brand, _model, id)
         if _location and _brand and _model and request.method == 'POST':
             sql_query = "UPDATE BBDD.EVSE SET location=%s, brand=%s, model=%s WHERE idEVSE=%s;"
-            app.logger.info(sql_query)
             data = (_location, _brand, _model, id)
             cursor = mysql.connection.cursor()
             cursor.execute(sql_query, data)
